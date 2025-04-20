@@ -5,13 +5,13 @@
     "targetPath" "css/main.css"
     "enableSourceMap" true
   }}
-  {{ $sass := resources.Get "sass/main.scss" }}
+  {{ $sass := resources.Get "scss/main.bundle.scss" }}
   {{ $style := $sass | toCSS $opts | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $style.Permalink }}">
 </head>
 <html>
   <body>
-
+    {{ partial "sidebar.html" . }}
     <div id="main-wrapper" class="d-flex justify-content-center">
       <div class="container d-flex flex-column px-xxl-5">
 

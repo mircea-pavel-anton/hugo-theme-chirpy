@@ -1,3 +1,19 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
+
+[module]
+[[module.imports]]
+path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
+
+[[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 10
+    pre = "fa-solid fa-house"
+
+[[menu.main]]
+    name = "关于"
+    url = "/about/"
+    weight = 20
+    pre = "fa-solid fa-house"

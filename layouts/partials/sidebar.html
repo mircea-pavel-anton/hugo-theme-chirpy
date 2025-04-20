@@ -1,0 +1,36 @@
+<!-- The Side Bar -->
+<aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
+    <header class="profile-wrapper">
+      <a href="{{ "/" | relURL }}" id="avatar" class="rounded-circle">
+        {{- if .Site.Params.avatar -}}
+          {{- $avatar := resources.Get .Site.Params.avatar -}}
+          {{- if $avatar -}}
+            <img src="{{ $avatar.RelPermalink }}" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+          {{- else -}}
+            <img src="{{ .Site.Params.avatar | absURL }}" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+          {{- end -}}
+        {{- end -}}
+      </a>
+  
+      <a class="site-title d-block" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+      <p class="site-subtitle fst-italic mb-0">{{ .Site.Params.tagline }}</p>
+    </header>
+    <!-- .profile-wrapper -->
+
+    <nav class="flex-column flex-grow-1 w-100 ps-0">
+      <ul class="nav">
+        {{ range .Site.Menus.main }}
+          <li class="nav-item{{ if eq .URL $.RelPermalink }} active{{ end }}">
+            <a href="{{ .URL | relURL }}" class="nav-link">
+              <i class="{{ .Pre }}"></i>
+              <span>{{ (i18n (printf "tabs.%s" .Identifier) | default .Name) | upper }}</span>
+            </a>
+          </li>
+          <!-- .nav-item -->
+        {{ end }}
+      </ul>
+    </nav>
+  
+    
+  </aside>
+  <!-- #sidebar -->
