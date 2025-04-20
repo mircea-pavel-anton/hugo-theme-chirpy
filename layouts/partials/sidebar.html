@@ -30,6 +30,48 @@
         {{ end }}
       </ul>
     </nav>
+
+    <div class="sidebar-bottom d-flex flex-wrap align-items-center w-100">
+      {{ if not .Site.Params.themeMode }}
+        <button type="button" class="btn btn-link nav-link" aria-label="Switch Mode" id="mode-toggle">
+          <i class="fas fa-adjust"></i>
+        </button>
+  
+        {{ if .Site.Params.social }}
+          <span class="icon-border"></span>
+        {{ end }}
+      {{ end }}
+  
+      {{ range .Site.Params.social }}
+        {{ $url := "" }}
+        {{ $rel := "" }}
+        
+        {{ if eq .type "github" }}
+          {{ $url = printf "https://github.com/%s" .id }}
+        {{ else if eq .type "twitter" }}
+          {{ $url = printf "https://twitter.com/%s" .id }}
+        {{ else if eq .type "email" }}
+          {{ $emailParts := split .id "@" }}
+          {{ $url = printf "javascript:location.href = 'mailto:' + ['%s','%s'].join('@')" (index $emailParts 0) (index $emailParts 1) }}
+        {{ else if eq .type "rss" }}
+          {{ $url = "index.xml" | relURL }}
+        {{ else }}
+          {{ $url = .url }}
+        {{ end }}
+  
+        {{ if $url }}
+          <a
+            href="{{ $url }}"
+            aria-label="{{ .type }}"
+            {{ if not .noblank }}target="_blank" rel="noopener noreferrer"{{ end }}
+            {{ if eq .type "mastodon" }}rel="me"{{ end }}
+          >
+            <i class="{{ .icon }}"></i>
+          </a>
+        {{ end }}
+      {{ end }}
+    </div>
+    <!-- .sidebar-bottom -->
   
     
   </aside>
