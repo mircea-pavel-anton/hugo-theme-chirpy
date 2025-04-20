@@ -1,0 +1,16 @@
+tabs:
+  home: "首页"
+  about: "关于"
+  archive: "归档"
+  categories: "分类"
+  tags: "标签"
+
+layout:
+  post: "文章"
+  page: "页面"
+  category: "分类"
+  tag: "标签"
+
+search:
+  hint: "搜索"
+  cancel: "取消"

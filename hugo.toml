@@ -7,13 +7,13 @@ title = 'Chirpy'
 path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
 
 [[menu.main]]
-  name = "首页"
+  name = "Home"
   url = "/"
   weight = 10
   pre = "fa-solid fa-house"
 
 [[menu.main]]
-  name = "关于"
+  name = "About"
   url = "/about/"
   weight = 20
   pre = "fa-solid fa-house"
