@@ -82,6 +82,7 @@
             {{ end }}
 
             <!-- read time -->
+            {{ partial "read-time.html" (dict "content" .Content "prompt" true "lang" $lang) }}
 
           </div>
         </div>
@@ -154,4 +155,8 @@
       </div>
     </div>
   </article>
+{{ end }}
+
+{{ define "panel" }}
+  {{ partial "toc.html" . }}
 {{ end }}

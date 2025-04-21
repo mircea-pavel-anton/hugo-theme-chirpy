@@ -18,11 +18,16 @@ search:
 panel:
   lastmod: "Recently Updated"
   trending_tags: "Trending Tags"
+  toc: "Contents"
 
 post:
   posted: "Posted"
   updated: "Updated"
   written_by: "By"
+  read_time:
+    prompt: "read"
+    unit: "min"
+    words: "words"
 
 copyright:
   brief: "All rights reserved"

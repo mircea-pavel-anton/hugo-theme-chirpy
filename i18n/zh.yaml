@@ -23,6 +23,11 @@ post:
   posted: "发布"
   updated: "更新"
   written_by: "由"
+  read_time:
+    prompt: "阅读"
+    unit: "分钟"
+    words: "字"
+
 copyright:
   brief: "版权所有"
   verbose: "版权所有"
