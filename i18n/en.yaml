@@ -18,3 +18,9 @@ search:
 panel:
   lastmod: "Recently Updated"
   trending_tags: "Trending Tags"
+
+copyright:
+  brief: "All rights reserved"
+  verbose: "All rights reserved"
+
+meta: "Powered by :PLATFORM with :THEME theme"

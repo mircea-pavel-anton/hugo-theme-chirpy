@@ -19,24 +19,27 @@ path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
   pre = "fa-solid fa-house"
 
 [params]
+  theme_version = "5.2.0"
 
-  [[params.social]]
+[params.social]
+  name = "Yifan"
+  url = "https://www.yifan.com"
+  [[params.social.links]]
     type = "github"
     id = "yourusername"  # 或直接使用 url = "https://github.com/yourusername"
     icon = "fab fa-github"
   
-  [[params.social]]
+  [[params.social.links]]
     type = "twitter"
     id = "yourhandle"
     icon = "fab fa-twitter"
   
-  [[params.social]]
+  [[params.social.links]]
     type = "email"
     id = "your.email@example.com"  # 会被自动分割处理
     icon = "fas fa-envelope"
   
-  [[params.social]]
+  [[params.social.links]]
     type = "rss"
     icon = "fas fa-rss"
     noblank = true  # 不在新窗口打开
-  

@@ -18,3 +18,9 @@ search:
 panel:
   lastmod: "最近更新"
   trending_tags: "热门标签"
+
+copyright:
+  brief: "版权所有"
+  verbose: "版权所有"
+
+meta: "由 :PLATFORM 提供支持，主题 :THEME"

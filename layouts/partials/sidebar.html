@@ -37,12 +37,12 @@
           <i class="fas fa-adjust"></i>
         </button>
   
-        {{ if .Site.Params.social }}
+        {{ if .Site.Params.social.links }}
           <span class="icon-border"></span>
         {{ end }}
       {{ end }}
   
-      {{ range .Site.Params.social }}
+      {{ range .Site.Params.social.links }}
         {{ $url := "" }}
         {{ $rel := "" }}
         
