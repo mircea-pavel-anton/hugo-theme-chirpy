@@ -20,6 +20,10 @@ path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
 
 [params]
   theme_version = "5.2.0"
+  toc = true
+
+[params.assets]
+  self_host = true
 
 [params.social]
   name = "Yifan"

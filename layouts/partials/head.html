@@ -1,3 +1,5 @@
+{{ $origin := cond (eq .Site.Params.self_host true) "basic" "cors" }}
+{{ $data := index .Site.Data.origin $origin }}
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
@@ -42,7 +44,7 @@
   {{ partial "favicons.html" . }}
 
   <!-- Resource Hints -->
-  {{ if not site.Params.assets.self_host.enabled }}
+  {{ if not site.Params.assets.self_host }}
     {{ range site.Data.origin.cors.resource_hints }}
       {{ range .links }}
         <link rel="{{ .rel }}" href="{{ .url }}" {{ delimit .opts " " | safeHTMLAttr }}>
@@ -56,26 +58,33 @@
   {{ end }}
 
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{ (printf "/assets/css/%s.css" site.Params.theme) | relURL }}">
+  {{ $opts := dict 
+    "transpiler" "dartsass"
+    "targetPath" "css/main.css"
+    "enableSourceMap" true
+  }}
+  {{ $sass := resources.Get "scss/main.bundle.scss" }}
+  {{ $style := $sass | toCSS $opts | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}">
 
   <!-- Web Font -->
-  <link rel="stylesheet" href="{{ site.Data.origin.webfonts | relURL }}">
+  <link rel="stylesheet" href="{{ $data.webfonts | relURL }}">
 
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="{{ site.Data.origin.fontawesome.css | relURL }}">
+  <link rel="stylesheet" href="{{ $data.fontawesome.css | relURL }}">
 
   <!-- 3rd-party Dependencies -->
   {{ if and site.Params.toc .Params.toc }}
-    <link rel="stylesheet" href="{{ site.Data.origin.toc.css | relURL }}">
+    <link rel="stylesheet" href="{{ $data.toc.css | relURL }}">
   {{ end }}
 
   {{ if or (eq .Type "post") (eq .Type "page") (eq .Kind "home") }}
-    <link rel="stylesheet" href="{{ site.Data.origin.lazy_polyfill.css | relURL }}">
+    <link rel="stylesheet" href="{{ $data.lazy_polyfill.css | relURL }}">
   {{ end }}
 
   {{ if or (eq .Type "page") (eq .Type "post") }}
     <!-- Image Popup -->
-    <link rel="stylesheet" href="{{ site.Data.origin.glightbox.css | relURL }}">
+    <link rel="stylesheet" href="{{ $data.glightbox.css | relURL }}">
   {{ end }}
 
   <!-- Scripts -->
