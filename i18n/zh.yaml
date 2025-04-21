@@ -14,3 +14,7 @@ layout:
 search:
   hint: "搜索"
   cancel: "取消"
+
+panel:
+  lastmod: "最近更新"
+  trending_tags: "热门标签"

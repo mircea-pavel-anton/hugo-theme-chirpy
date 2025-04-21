@@ -14,3 +14,7 @@ layout:
 search:
   hint: "Search"
   cancel: "Cancel"
+
+panel:
+  lastmod: "Recently Updated"
+  trending_tags: "Trending Tags"
