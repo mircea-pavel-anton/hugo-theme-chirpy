@@ -2,7 +2,7 @@
  * Tab 'Categories' expand/close effect.
  */
 
-import 'bootstrap/js/src/collapse.js';
+import 'js/bootstrap/src/collapse.js';
 
 const childPrefix = 'l_';
 const parentPrefix = 'h_';

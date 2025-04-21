@@ -1,4 +1,4 @@
-import Tooltip from 'bootstrap/js/src/tooltip';
+import Tooltip from 'js/bootstrap/src/tooltip';
 
 export function loadTooptip() {
   const tooltipTriggerList = document.querySelectorAll(

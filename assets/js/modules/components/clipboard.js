@@ -5,7 +5,7 @@
  *    clipboard.js (https://github.com/zenorocha/clipboard.js)
  */
 
-import Tooltip from 'bootstrap/js/src/tooltip';
+import Tooltip from 'js/bootstrap/src/tooltip';
 
 const clipboardSelector = '.code-header>button';
 
