@@ -23,7 +23,7 @@ path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
   toc = true
 
 [params.assets]
-  self_host = true
+  self_host = false
 
 [params.social]
   name = "Yifan"

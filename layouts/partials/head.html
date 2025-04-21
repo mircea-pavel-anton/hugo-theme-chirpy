@@ -1,5 +1,11 @@
 {{ $origin := cond (eq .Site.Params.self_host true) "basic" "cors" }}
 {{ $data := index .Site.Data.origin $origin }}
+{{- $jsOpts := dict
+  "target" "es2015"
+  "minify" (eq hugo.Environment "production")
+-}}
+{{- $themeOpts := merge $jsOpts (dict "global" "Theme") -}}
+{{- $theme := resources.Get "js/modules/theme.js" | js.Build $themeOpts -}}
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
@@ -47,7 +53,7 @@
   {{ if not site.Params.assets.self_host }}
     {{ range site.Data.origin.cors.resource_hints }}
       {{ range .links }}
-        <link rel="{{ .rel }}" href="{{ .url }}" {{ delimit .opts " " | safeHTMLAttr }}>
+        <link rel="{{ .rel }}" href="{{ .url }}" {{ if isset . "opts" }}{{ delimit .opts " " | safeHTMLAttr }}{{ end }}>
       {{ end }}
     {{ end }}
   {{ end }}
@@ -88,7 +94,7 @@
   {{ end }}
 
   <!-- Scripts -->
-  <script src="{{ "/assets/js/dist/theme.min.js" | relURL }}"></script>
+  <script src="{{ $theme.RelPermalink }}"></script>
 
   {{ partial "js-selector.html" . }}
 
