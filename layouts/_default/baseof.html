@@ -8,6 +8,9 @@
   {{ $sass := resources.Get "scss/main.bundle.scss" }}
   {{ $style := $sass | toCSS $opts | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $style.Permalink }}">
+  {{ $jsFiles := resources.Match "js/**/*.js" }}
+  {{ $jsBundle := $jsFiles | resources.Concat "js/bundle.js" | minify | fingerprint }}
+  <script src="{{ $jsBundle.RelPermalink }}" integrity="{{ $jsBundle.Data.Integrity }}" type="module" defer></script>
 </head>
 <html>
   <body>
