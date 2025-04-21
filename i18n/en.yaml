@@ -19,6 +19,11 @@ panel:
   lastmod: "Recently Updated"
   trending_tags: "Trending Tags"
 
+post:
+  posted: "Posted"
+  updated: "Updated"
+  written_by: "By"
+
 copyright:
   brief: "All rights reserved"
   verbose: "All rights reserved"

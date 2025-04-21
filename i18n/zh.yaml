@@ -19,6 +19,10 @@ panel:
   lastmod: "最近更新"
   trending_tags: "热门标签"
 
+post:
+  posted: "发布"
+  updated: "更新"
+  written_by: "由"
 copyright:
   brief: "版权所有"
   verbose: "版权所有"

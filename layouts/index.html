@@ -50,6 +50,9 @@
             {{ if not (findRE "//" $src) }}
               {{ $media_subpath := .Params.media_subpath | default "" }}
               {{ $src = path.Join $media_subpath $src }}
+              
+              {{ $page_path := path.Dir .RelPermalink }}
+              {{ $src = path.Join $page_path $src }}
             {{ end }}
 
             {{ $alt := .Params.image.alt | default "Preview Image" | htmlEscape }}
