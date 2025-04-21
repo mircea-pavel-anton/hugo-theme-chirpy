@@ -3,6 +3,7 @@ title: "Text and Typography"
 date: 2019-08-09
 lastmod: 2025-04-21
 draft: false
+layout: post
 description: >-
   Examples of text, typography, math equations, diagrams, flowcharts, pictures, videos, and more.
 tags:
