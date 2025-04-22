@@ -136,3 +136,5 @@ class Theme {
 Theme.init();
 
 export default Theme;
+
+window.Theme = Theme;

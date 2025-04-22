@@ -9,7 +9,7 @@
   {{ $style := $sass | toCSS $opts | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $style.Permalink }}">
 </head>
-<html>
+<html lang="{{ .Site.LanguageCode }}">
   {{ partial "head.html" . }}
   <body>
     {{ partial "sidebar.html" . }}

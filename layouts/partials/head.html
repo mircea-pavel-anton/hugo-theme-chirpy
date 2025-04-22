@@ -80,7 +80,7 @@
   <link rel="stylesheet" href="{{ $data.fontawesome.css | relURL }}">
 
   <!-- 3rd-party Dependencies -->
-  {{ if and site.Params.toc .Params.toc }}
+  {{ if .Params.toc | default site.Params.toc }}
     <link rel="stylesheet" href="{{ $data.toc.css | relURL }}">
   {{ end }}
 
