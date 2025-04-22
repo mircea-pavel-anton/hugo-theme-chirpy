@@ -16,7 +16,7 @@
 
 
 <!-- layout specified -->
-{{ if or (eq .Layout "post") (eq .Layout "page") $is_home }}
+{{ if or (eq .Type "post") (eq .Layout "page") $is_home }}
   {{ with $data.lazyPolyfill.js }}
     {{ $urls = $urls | append . }}
   {{ end }}
@@ -32,7 +32,7 @@
   {{ end }}
 {{ end }}
 
-{{ if or $is_home (eq .Layout "post") (eq .Layout "archives") (eq .Layout "category") (eq .Layout "tag") }}
+{{ if or $is_home (eq .Type "post") (eq .Layout "archives") (eq .Layout "category") (eq .Layout "tag") }}
   {{ $locale := strings.TrimSuffix (path.Ext .Lang) .Lang }}
   
   {{ with $data.dayjs.js.common }}
@@ -72,7 +72,7 @@
   {{ $js = "home" }}
 {{ else if eq .Layout "categories" }}
   {{ $js = "categories" }}
-{{ else if eq .Layout "post" }}
+{{ else if eq .Type "post" }}
   {{ $js = "post" }}
 {{ else if eq .Layout "page" }}
   {{ $js = "page" }}
@@ -93,7 +93,7 @@
 {{ end }}
 
 <!-- Pageviews -->
-{{ if eq .Layout "post" }}
+{{ if eq .Type "post" }}
   {{ $provider := site.Params.pageviews.provider }}
   {{ if and $provider (ne $provider "") }}
     {{ if eq $provider "goatcounter" }}

@@ -122,9 +122,9 @@
       {{ with .Params.categories }}
         <div class="post-meta mb-3">
           <i class="far fa-folder-open fa-fw me-1"></i>
+          {{ $len := len . }}
           {{ range $i, $category := . }}
-            <a href="{{ "/categories/" | relLangURL }}{{ $category | urlize }}/">{{ $category }}</a>
-            {{ if not (eq $i (sub (len $) 1)) }},{{ end }}
+            <a href="{{ "/categories/" | relLangURL }}{{ $category | urlize }}/">{{ $category }}</a>{{ if not (eq $i (sub $len 1)) }},{{ end }}
           {{ end }}
         </div>
       {{ end }}
@@ -159,4 +159,9 @@
 
 {{ define "panel" }}
   {{ partial "toc.html" . }}
+{{ end }}
+
+{{ define "tail" }}
+  {{ partial "related-posts.html" . }}
+  {{ partial "post-nav.html" . }}
 {{ end }}
