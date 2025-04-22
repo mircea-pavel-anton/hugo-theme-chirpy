@@ -3,13 +3,14 @@ title: "Getting Started"
 date: 2019-08-09
 lastmod: 2025-04-21
 draft: false
-layout: post
 description: >-
   Get started with Chirpy basics in this comprehensive overview.
   You will learn how to install, configure, and use your first Chirpy-based website, as well as deploy it to a web server.
-tags:
+categories:
   - Blogging
   - Tutorial
+tags:
+  - getting started
 pin: true
 ---
 
