@@ -32,7 +32,7 @@
   {{ end }}
 {{ end }}
 
-{{ if or $is_home (eq .Type "post") (eq .Layout "archives") (eq .Layout "category") (eq .Layout "tag") }}
+{{ if or $is_home (eq .Type "post") (eq .Layout "archives") (eq .Type "categories") (eq .Type "tags") }}
   {{ $locale := strings.TrimSuffix (path.Ext .Lang) .Lang }}
   
   {{ with $data.dayjs.js.common }}
@@ -76,7 +76,7 @@
   {{ $js = "post" }}
 {{ else if eq .Layout "page" }}
   {{ $js = "page" }}
-{{ else if or (eq .Layout "archives") (eq .Layout "category") (eq .Layout "tag") }}
+{{ else if or (eq .Layout "archives") (eq .Type "categories") (eq .Type "tags") }}
   {{ $js = "misc" }}
 {{ end }}
 

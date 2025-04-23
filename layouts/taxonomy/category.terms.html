@@ -1,0 +1,114 @@
+
+{{ define "main" }}
+<article class="px-1">
+  <h1 class="dynamic-title">
+    {{ i18n "tabs.categories" }}
+  </h1>
+  <div class="content">
+    <div class="container">
+      {{ $categories := .Site.Taxonomies.categories }}
+      
+      <!-- 首先收集所有唯一的父分类 -->
+      {{ $parentCategories := slice }}
+      {{ range $name, $taxonomy := $categories }}
+        {{ range $taxonomy.Pages }}
+          {{ if gt (len .Params.categories) 0 }}
+            {{ $parentCategories = $parentCategories | append (index .Params.categories 0) }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+      {{ $parentCategories = $parentCategories | uniq | sort }}
+      
+      <!-- 然后为每个父分类创建卡片 -->
+      {{ range $parentCategories }}
+        {{ $parentName := . }}
+        {{ $subcategories := slice }}
+        {{ $parentPages := slice }}
+        
+        <!-- 收集与此父分类相关的所有页面和子分类 -->
+        {{ range $name, $taxonomy := $categories }}
+          {{ range $taxonomy.Pages }}
+            {{ if gt (len .Params.categories) 0 }}
+              {{ if eq (index .Params.categories 0) $parentName }}
+                {{ $parentPages = $parentPages | append . }}
+                {{ if gt (len .Params.categories) 1 }}
+                  {{ $subcategories = $subcategories | append (index .Params.categories 1) }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+        {{ $subcategories = $subcategories | uniq | sort }}
+
+        <div class="card categories mb-3">
+          <div class="card-header d-flex justify-content-between hide-border-bottom">
+            <span class="ms-2">
+              <i class="far fa-folder{{ if gt (len $subcategories) 0 }}-open{{ end }} fa-fw"></i>
+              <a href="{{ "/categories/" | relURL }}{{ $parentName | urlize }}" class="mx-2">{{ $parentName }}</a>
+              <span class="text-muted small font-weight-light">
+                {{ if gt (len $subcategories) 0 }}
+                  {{ len $subcategories }}
+                  {{ if gt (len $subcategories) 1 }}
+                    subcategories,
+                  {{ else }}
+                    subcategory,
+                  {{ end }}
+                {{ end }}
+                {{ len $parentPages }}
+                {{ if gt (len $parentPages) 1 }}
+                  posts
+                {{ else }}
+                  post
+                {{ end }}
+              </span>
+            </span>
+
+            {{ if gt (len $subcategories) 0 }}
+              <a href="#sub-{{ $parentName | anchorize }}" data-bs-toggle="collapse" aria-expanded="true">
+                <i class="fas fa-fw fa-angle-down"></i>
+              </a>
+            {{ else }}
+              <span class="disabled">
+                <i class="fas fa-fw fa-angle-right"></i>
+              </span>
+            {{ end }}
+          </div>
+
+          {{ if gt (len $subcategories) 0 }}
+            <div id="sub-{{ $parentName | anchorize }}" class="collapse show">
+              <ul class="list-group list-group-flush">
+                {{ range $subcategories }}
+                  {{ $subCategoryName := . }}
+                  
+                  <!-- 查找子分类的文章 -->
+                  {{ $subPages := slice }}
+                  {{ range $parentPages }}
+                    {{ if gt (len .Params.categories) 1 }}
+                      {{ if eq (index .Params.categories 1) $subCategoryName }}
+                        {{ $subPages = $subPages | append . }}
+                      {{ end }}
+                    {{ end }}
+                  {{ end }}
+                  
+                  <li class="list-group-item">
+                    <i class="far fa-folder fa-fw"></i>
+                    <a href="{{ "/categories/" | relURL }}{{ $subCategoryName | urlize }}" class="mx-2">{{ $subCategoryName }}</a>
+                    <span class="text-muted small font-weight-light">
+                      {{ len $subPages }}
+                      {{ if gt (len $subPages) 1 }}
+                        posts
+                      {{ else }}
+                        post
+                      {{ end }}
+                    </span>
+                  </li>
+                {{ end }}
+              </ul>
+            </div>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</article>
+{{ end }}

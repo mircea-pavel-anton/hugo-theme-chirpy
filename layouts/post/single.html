@@ -124,7 +124,15 @@
           <i class="far fa-folder-open fa-fw me-1"></i>
           {{ $len := len . }}
           {{ range $i, $category := . }}
-            <a href="{{ "/categories/" | relLangURL }}{{ $category | urlize }}/">{{ $category }}</a>{{ if not (eq $i (sub $len 1)) }},{{ end }}
+            {{ if eq $i 0 }}
+              <!-- 主分类 -->
+              <a href="{{ "/categories/" | relLangURL }}{{ $category | urlize }}/">{{ $category }}</a>
+            {{ else }}
+              <!-- 子分类：确保链接包含主分类路径 -->
+              {{ $parentCategory := index $.Params.categories 0 }}
+              <a href="{{ "/categories/" | relLangURL }}{{ $parentCategory | urlize }}/{{ $category | urlize }}/">{{ $category }}</a>
+            {{ end }}
+            {{ if not (eq $i (sub $len 1)) }},{{ end }}
           {{ end }}
         </div>
       {{ end }}

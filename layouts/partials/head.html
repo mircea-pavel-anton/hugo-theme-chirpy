@@ -17,28 +17,7 @@
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
   >
 
-  {{ template "_internal/opengraph.html" }}
-  {{ template "_internal/twitter_cards.html" }}
-  {{ template "_internal/schema.html" }}
 
-  <!-- Setup Open Graph image -->
-  {{ if .Params.image }}
-    {{ $src := .Params.image }}
-    {{ $imgUrl := "" }}
-
-    {{ if not (findRE "://" $src) }}
-      {{ $imgUrl = absURL $src }}
-      {{ $oldUrl := $src | absURL }}
-      {{ $newUrl := $imgUrl }}
-      <!-- Hugo doesn't have direct string replacement in templates, 
-           so we'd need to handle this differently or use a custom function -->
-    {{ end }}
-  {{ else if site.Params.social_preview_image }}
-    {{ $imgUrl := site.Params.social_preview_image | absURL }}
-    <meta property="og:image" content="{{ $imgUrl }}" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:image" content="{{ $imgUrl }}" />
-  {{ end }}
 
   <title>
     {{ if ne .Kind "home" }}
