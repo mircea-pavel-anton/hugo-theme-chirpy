@@ -5,35 +5,48 @@
       {{ $page := . }}
       {{ $url := .RelPermalink }}
       {{ $paths := split (trim $url "/") "/" }}
+      {{ $is_home := or (eq $url "/") (eq $url (relLangURL "/")) }}
 
-      {{ if or (eq $url "/") (eq $url (relLangURL "/")) }}
+      {{ if $is_home }}
         <!-- index page -->
         <span>{{ T "tabs.home" | title }}</span>
-      {{ else }}
-        {{ range $index, $item := $paths }}
-          {{ if eq $index 0 }}
-            <span>
-              <a href="{{ "/" | relLangURL }}">
-                {{- T "tabs.home" | title -}}
-              </a>
-            </span>
-
-            {{ $currentMenuEntry := "" }}
-            {{ range site.Menus.main }}
-              {{ if eq .URL $page.RelPermalink }}
-                {{ $currentMenuEntry = . }}
-              {{ end }}
-            {{ end }}
-
-            <!-- 显示逻辑 -->
-            {{ if $currentMenuEntry }}
-              <span>{{ $currentMenuEntry.Name }}</span>
-            {{ else }}
-              <span>{{ $page.Title }}</span>  <!-- 使用保存的页面对象 -->
-            {{ end }}
-
-
+      {{else}}
+        <span>
+          <a href="{{ "/" | relLangURL }}">
+            {{- T "tabs.home" | title -}}
+          </a>
+        </span>
+        {{ if eq $page.Type "tags" }}
+          {{ if .Data.Term}}
+            <span><a href="{{ "/tags/" | relLangURL }}">{{i18n "tabs.tags"}}</a></span>
+            <span>{{ .Data.Term }}</span>
+          {{ else }}
+            <span>{{i18n "tabs.tags"}}</span>
           {{ end }}
+        {{ else if eq $page.Type "categories" }}
+          {{ if .Data.Term}}
+            <span><a href="{{ "/categories/" | relLangURL }}">{{i18n "tabs.categories"}}</a></span>
+            <span>{{ .Data.Term }}</span>
+          {{ else }}
+            <span>{{i18n "tabs.categories"}}</span>
+          {{ end }}
+        {{ else }}
+        
+          {{ $currentMenuEntry := "" }}
+          {{ range site.Menus.main }}
+            {{ if eq .URL $page.RelPermalink }}
+              {{ $currentMenuEntry = . }}
+            {{ end }}
+          {{ end }}
+
+          <!-- 显示逻辑 -->
+          {{ if $currentMenuEntry }}
+            <span>{{ $currentMenuEntry.Name }}</span>
+          {{ else }}
+            <span>{{ $page.Title }}</span>  <!-- 使用保存的页面对象 -->
+          {{ end }}
+
+
         {{ end }}
       {{ end }}
     </nav>
