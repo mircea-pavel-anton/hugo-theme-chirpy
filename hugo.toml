@@ -2,6 +2,7 @@ baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'Chirpy'
 enableGitInfo = true
+paginate = 5  # 每页显示的文章数量
 
 [taxonomies]
   category = "categories"

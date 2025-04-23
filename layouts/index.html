@@ -7,7 +7,7 @@
   {{ $pinned_size := 0 }}
 
   <!-- Get pinned posts on current page -->
-  {{ $paginator := .Paginate $all_normal }}
+  {{ $paginator := .Paginate $all_posts }}
   {{ $visible_start := sub $paginator.PageNumber 1 | mul $paginator.PagerSize }}
   {{ $visible_end := add $visible_start $paginator.PagerSize }}
 
@@ -24,7 +24,7 @@
   {{ end }}
 
   <!-- Get normal posts on current page -->
-  {{ $normal_size := sub (len $paginator.Pages) $pinned_size }}
+  {{ $normal_size := sub $paginator.PagerSize $pinned_size }}
 
   {{ if gt $normal_size 0 }}
     {{ $normal_start := 0 }}
@@ -121,6 +121,6 @@
   <!-- #post-list -->
 
   {{ if gt $paginator.TotalPages 1 }}
-    {{ partial "pagination.html" . }}
+    {{ partial "post-paginator.html" . }}
   {{ end }}
 {{ end }}
