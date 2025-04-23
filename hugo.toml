@@ -17,28 +17,28 @@ path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
   pre = "fa-solid fa-house"
 
 [[menu.main]]
-  name = "About"
-  url = "/about/"
-  weight = 20
-  pre = "fa-solid fa-house"
-
-[[menu.main]]
   name = "Categories"
   url = "/categories/"
-  weight = 30
-  pre = "fa-solid fa-house"
+  weight = 20
+  pre = "fa-solid fa-stream"
 
 [[menu.main]]
   name = "Tags"
   url = "/tags/"
-  weight = 40
-  pre = "fa-solid fa-house"
+  weight = 30
+  pre = "fa-solid fa-tags"
 
 [[menu.main]]
   name = "Archives"
   url = "/archives/"
+  weight = 40
+  pre = "fa-solid fa-archive"
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
   weight = 50
-  pre = "fa-solid fa-house"
+  pre = "fa-solid fa-info-circle"
 
 [params]
   theme_version = "5.2.0"
