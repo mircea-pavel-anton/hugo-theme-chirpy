@@ -1,7 +1,6 @@
 ---
-title: "Text and Typography"
-date: 2019-08-09
-lastmod: 2025-04-21
+title: Text and Typography
+date: 2019-08-08 11:33:00 +0800
 draft: false
 description: >-
   Examples of text, typography, math equations, diagrams, flowcharts, pictures, videos, and more.

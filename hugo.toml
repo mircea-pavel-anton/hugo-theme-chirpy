@@ -1,6 +1,7 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'Chirpy'
+enableGitInfo = true
 
 [taxonomies]
   category = "categories"

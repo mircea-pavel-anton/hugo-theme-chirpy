@@ -1,7 +1,6 @@
 ---
-title: "Getting Started"
-date: 2019-08-09
-lastmod: 2025-04-21
+title: Getting Started
+date: 2019-08-09 20:55:00 +0800
 draft: false
 description: >-
   Get started with Chirpy basics in this comprehensive overview.
