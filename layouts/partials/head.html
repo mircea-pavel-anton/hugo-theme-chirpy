@@ -6,6 +6,7 @@
 -}}
 {{- $themeOpts := merge $jsOpts (dict "global" "Theme") -}}
 {{- $theme := resources.Get "js/modules/theme.js" | js.Build $themeOpts -}}
+{{- $search := resources.Get "js/search.js" | js.Build $jsOpts -}}
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
@@ -74,6 +75,7 @@
 
   <!-- Scripts -->
   <script src="{{ $theme.RelPermalink }}"></script>
+  <script defer src="{{ $search.RelPermalink }}"></script>
 
   {{ partial "js-selector.html" . }}
 
