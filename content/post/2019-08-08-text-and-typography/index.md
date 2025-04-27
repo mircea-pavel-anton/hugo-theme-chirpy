@@ -20,17 +20,13 @@ image:
 
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable -->
-# H1 — heading
-{: .mt-4 .mb-0 }
+# H1 — heading {data-toc-skip=true .mt-4 .mb-0 }
 
-## H2 — heading
-{: data-toc-skip='' .mt-4 .mb-0 }
+## H2 — heading {data-toc-skip=true .mt-4 .mb-0 }
 
-### H3 — heading
-{: data-toc-skip='' .mt-4 .mb-0 }
+### H3 — heading {data-toc-skip=true .mt-4 .mb-0 }
 
-#### H4 — heading
-{: data-toc-skip='' .mt-4 }
+#### H4 — heading {data-toc-skip=true .mt-4 }
 <!-- markdownlint-restore -->
 
 ## Paragraph
@@ -75,16 +71,16 @@ Moon
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable -->
 > An example showing the `tip` type prompt.
-{: .prompt-tip }
+{.prompt-tip }
 
 > An example showing the `info` type prompt.
-{: .prompt-info }
+{.prompt-info }
 
 > An example showing the `warning` type prompt.
-{: .prompt-warning }
+{.prompt-warning }
 
 > An example showing the `danger` type prompt.
-{: .prompt-danger }
+{.prompt-danger }
 <!-- markdownlint-restore -->
 
 ## Tables
@@ -194,7 +190,7 @@ The image below will toggle dark/light mode based on theme preference, notice it
 
 ## Video
 
-{% include embed/youtube.html id='Balreaj8Yqs' %}
+{{< youtube id="Balreaj8Yqs" >}}
 
 ## Reverse Footnote
 
