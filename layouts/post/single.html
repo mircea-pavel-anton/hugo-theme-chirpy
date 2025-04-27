@@ -1,6 +1,7 @@
 {{ define "main" }}
   {{ $enable_toc := and (.Params.toc | default site.Params.toc) (gt (len .TableOfContents) 100) }}
   {{ $lang := .Site.Language.Lang }}
+  {{ $page := . }}
 
   <article class="px-1" data-toc="{{ $enable_toc }}">
     <header>
@@ -25,7 +26,8 @@
         {{ end }}
 
         {{ with .Params.image }}
-          {{ $src := printf "src=\"%s\"" ( .path | default . ) }}
+          {{ $src := $page.Resources.GetMatch ( .path | default . ) }}
+          {{ $src = printf "src=\"%s\"" $src.RelPermalink }}
           {{ $class := "class=\"preview-img" }}
           {{ if .no_bg }}{{ $class = printf "%s no-bg\"" $class }}{{ else }}{{ $class = printf "%s\"" $class }}{{ end }}
           {{ $alt := printf "alt=\"%s\"" ( .alt | default "Preview Image" ) }}

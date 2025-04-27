@@ -1,7 +1,7 @@
 <!-- The Side Bar -->
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
     <header class="profile-wrapper">
-      <a href="{{ "/" | relURL }}" id="avatar" class="rounded-circle">
+      <a href="{{ .Site.Home.RelPermalink }}" id="avatar" class="rounded-circle">
         {{- if .Site.Params.avatar -}}
           {{- $avatar := resources.Get .Site.Params.avatar -}}
           {{- if $avatar -}}
@@ -12,7 +12,7 @@
         {{- end -}}
       </a>
   
-      <a class="site-title d-block" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+      <a class="site-title d-block" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
       {{ if .Site.Params.tagline }}
         <p class="site-subtitle fst-italic mb-0">{{ .Site.Params.tagline }}</p>
       {{ end }}
@@ -22,14 +22,24 @@
     <nav class="flex-column flex-grow-1 w-100 ps-0">
       <ul class="nav">
         {{ range .Site.Menus.main }}
-          <li class="nav-item{{ if eq .URL $.RelPermalink }} active{{ end }}">
-            <a href="{{ .URL | relURL }}" class="nav-link">
+          {{ $active := false }}
+          {{ if eq ($.Site.GetPage .URL).RelPermalink $.RelPermalink }}
+            {{ $active = true }}
+          {{ end }}
+          <li class="nav-item{{ if $active }} active{{ end }}">
+            <a href="{{ .URL | relLangURL }}" class="nav-link">
               <i class="fa-fw fas {{ .Pre }}"></i>
-              <span>{{ (i18n (printf "tabs.%s" .Identifier) | default .Name) | upper }}</span>
+              <span>{{ .Name | upper }}</span>
             </a>
           </li>
           <!-- .nav-item -->
         {{ end }}
+        <li class="nav-item">
+          <a class="nav-link">
+            <i class="fa-fw fas fa-language"></i>
+            {{ partial "language-selector.html" . }}
+          </a>
+        </li>
       </ul>
     </nav>
 
@@ -56,7 +66,7 @@
           {{ $emailParts := split .id "@" }}
           {{ $url = printf "javascript:location.href = 'mailto:' + ['%s','%s'].join('@')" (index $emailParts 0) (index $emailParts 1) }}
         {{ else if eq .type "rss" }}
-          {{ $url = "index.xml" | relURL }}
+          {{ $url = "index.xml" | relLangURL }}
         {{ else }}
           {{ $url = .url }}
         {{ end }}

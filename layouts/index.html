@@ -48,11 +48,8 @@
           {{ if .Params.image }}
             {{ $src := .Params.image.path | default .Params.image }}
             {{ if not (findRE "//" $src) }}
-              {{ $media_subpath := .Params.media_subpath | default "" }}
-              {{ $src = path.Join $media_subpath $src }}
-              
-              {{ $page_path := path.Dir .RelPermalink }}
-              {{ $src = path.Join $page_path $src }}
+              {{ $src = .Resources.GetMatch ( .Params.image.path | default .Params.image ) }}
+              {{ $src = $src.RelPermalink }}
             {{ end }}
 
             {{ $alt := .Params.image.alt | default "Preview Image" | htmlEscape }}

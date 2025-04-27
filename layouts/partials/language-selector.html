@@ -1,0 +1,10 @@
+<div class="language-selector">
+  <select class="language-dropdown" onchange="location = this.value;">
+    {{ $currentLang := .Site.Language.Lang }}
+    {{ range .Site.Languages }}
+      <option value="/{{ .Lang }}/" {{ if eq .Lang $currentLang }}selected{{ end }}>
+        {{ .LanguageName }} ({{ .Lang }})
+      </option>
+    {{ end }}
+  </select>
+</div>
