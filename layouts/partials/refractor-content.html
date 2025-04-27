@@ -10,19 +10,19 @@
 
 <!-- Change checkbox icons -->
 {{ if findRE `<input.*type="checkbox"` $content }}
-  <!-- 首先标记包含复选框的li元素 -->
+  <!-- first replace the li with task-list-item class -->
   {{ $content = replaceRE `<li>(\s*)<input` `<li class="task-list-item">$1<input` $content }}
   {{ $content = replaceRE `<li class="([^"]*)"(\s*)<input` `<li class="task-list-item $1"$2<input` $content }}
   
-  <!-- 然后为包含task-list-item类的li的父ul添加task-list类 -->
+  <!-- then add task-list class to the parent ul of the li with task-list-item class -->
   {{ $content = replaceRE `<ul>(\s*)<li class="task-list-item` `<ul class="task-list">$1<li class="task-list-item` $content }}
   {{ $content = replaceRE `<ul class="([^"]*)"(\s*)<li class="task-list-item` `<ul class="task-list $1"$2<li class="task-list-item` $content }}
   
-  <!-- 替换所有已选中的复选框格式 -->
+  <!-- replace all checked checkbox format -->
   {{ $content = replaceRE `<input.*?checked.*?type="checkbox".*?>` `<i class="fas fa-check-circle fa-fw checked"></i>` $content }}
   {{ $content = replaceRE `<input.*?type="checkbox".*?checked.*?>` `<i class="fas fa-check-circle fa-fw checked"></i>` $content }}
   
-  <!-- 替换所有未选中的复选框格式（排除已经被替换的checked复选框） -->
+  <!-- replace all unchecked checkbox format -->
   {{ $content = replaceRE `<input.*?type="checkbox".*?>` `<i class="far fa-circle fa-fw"></i>` $content }}
 {{ end }}
 
@@ -34,30 +34,11 @@
   {{ $markStart := printf `<h%s id="` $level }}
   {{ $markEnd := printf `</h%s>` $level }}
   
-  {{ if findRE $markStart $headingContent }}
-    {{ $newContent := "" }}
-    {{ $headingSnippets := split $headingContent $markStart }}
-    
-    {{ range $index, $snippet := $headingSnippets }}
-      {{ if eq $index 0 }}
-        {{ $newContent = $snippet }}
-        {{ continue }}
-      {{ end }}
-      
-      {{ $id := index (split $snippet `"`) 0 }}
-      {{ $anchor := printf `<a href="#%s" class="anchor text-muted"><i class="fas fa-hashtag"></i></a>` $id }}
-      
-      {{ $left := index (split $snippet $markEnd) 0 }}
-      {{ $right := substr $snippet (len $left) }}
-      {{ $left = replace $left `">` `"><span class="me-2">` | printf `%s</span>` }}
-      
-      {{ $newContent = printf `%s%s%s%s%s` $newContent $markStart $left $anchor $right }}
-    {{ end }}
-    
-    {{ $headingContent = $newContent }}
-  {{ end }}
+  {{ $pattern := printf `%s([^"]+)">(.*?)%s` $markStart $markEnd }}
+  {{ $replacement := printf `%s$1"><span class="me-2">$2</span><a href="#$1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a>%s` $markStart $markEnd }}
+  {{ $headingContent = replaceRE $pattern $replacement $headingContent }}
 {{ end }}
 
 {{ $content = $headingContent | safeHTML }}
 
-{{ $content }}
+{{ $content | safeHTML }}
