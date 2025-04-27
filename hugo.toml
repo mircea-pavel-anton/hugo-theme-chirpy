@@ -77,7 +77,7 @@ path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
 
 [params.social]
   name = "Yifan"
-  url = "https://www.yifan.com"
+  url = "https://github.com/geekifan"
   [[params.social.links]]
     type = "github"
     id = "yourusername"  # 或直接使用 url = "https://github.com/yourusername"
