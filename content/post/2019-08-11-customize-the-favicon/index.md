@@ -24,10 +24,10 @@ In the next step, the webpage will show all usage scenarios. You can keep the de
 
 Download the generated package, unzip and delete the following two from the extracted files:
 
-- `browserconfig.xml`{: .filepath}
-- `site.webmanifest`{: .filepath}
+- {{< markdown/filepath src="browserconfig.xml" >}}
+- {{< markdown/filepath src="site.webmanifest" >}}
 
-And then copy the remaining image files (`.PNG`{: .filepath} and `.ICO`{: .filepath}) to cover the original files in the directory `assets/img/favicons/`{: .filepath} of your Jekyll site. If your Jekyll site doesn't have this directory yet, just create one.
+And then copy the remaining image files ({{< markdown/filepath src=".PNG" >}} and {{< markdown/filepath src=".ICO" >}}) to cover the original files in the directory {{< markdown/filepath src="assets/img/favicons/" >}} of your Jekyll site. If your Jekyll site doesn't have this directory yet, just create one.
 
 The following table will help you understand the changes to the favicon files:
 
@@ -38,6 +38,6 @@ The following table will help you understand the changes to the favicon files:
 
 <!-- markdownlint-disable-next-line -->
 >  ✓ means keep, ✗ means delete.
-{: .prompt-info }
+{.prompt-info }
 
 The next time you build the site, the favicon will be replaced with a customized edition.

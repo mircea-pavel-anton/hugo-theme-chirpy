@@ -10,6 +10,7 @@ categories:
 tags:
   - typography
 pin: true
+math: true
 image:
   path: devices-mockup.png
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
@@ -105,7 +106,7 @@ This is an example of `Inline Code`.
 
 ## Filepath
 
-Here is the `/path/to/the/file.extend`{: .filepath}.
+Here is the {{< markdown/filepath src="/path/to/the/file.extend" >}}.
 
 ## Code blocks
 
@@ -190,7 +191,7 @@ The image below will toggle dark/light mode based on theme preference, notice it
 
 ## Video
 
-{{< youtube id="Balreaj8Yqs" >}}
+{{< embed/youtube id="Balreaj8Yqs" >}}
 
 ## Reverse Footnote
 
