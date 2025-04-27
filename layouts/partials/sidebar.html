@@ -13,7 +13,9 @@
       </a>
   
       <a class="site-title d-block" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
-      <p class="site-subtitle fst-italic mb-0">{{ .Site.Params.tagline }}</p>
+      {{ if .Site.Params.tagline }}
+        <p class="site-subtitle fst-italic mb-0">{{ .Site.Params.tagline }}</p>
+      {{ end }}
     </header>
     <!-- .profile-wrapper -->
 

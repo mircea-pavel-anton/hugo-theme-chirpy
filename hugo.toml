@@ -70,6 +70,7 @@ path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
   theme_version = "5.2.0"
   toc = true
   avatar = "img/commons/avatar.jpg"
+  tagline = "A text-focused Jekyll theme"
 
 [params.assets]
   self_host = false
