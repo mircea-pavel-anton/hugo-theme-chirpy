@@ -44,7 +44,7 @@
           <div class="card-header d-flex justify-content-between hide-border-bottom">
             <span class="ms-2">
               <i class="far fa-folder{{ if gt (len $subcategories) 0 }}-open{{ end }} fa-fw"></i>
-              <a href="{{ "/categories/" | relURL }}{{ $parentName | urlize }}" class="mx-2">{{ $parentName }}</a>
+              <a href="{{ "/categories/" | relLangURL }}{{ $parentName | urlize }}" class="mx-2">{{ $parentName }}</a>
               <span class="text-muted small font-weight-light">
                 {{ if gt (len $subcategories) 0 }}
                   {{ len $subcategories }}
@@ -92,7 +92,7 @@
                   
                   <li class="list-group-item">
                     <i class="far fa-folder fa-fw"></i>
-                    <a href="{{ "/categories/" | relURL }}{{ $subCategoryName | urlize }}" class="mx-2">{{ $subCategoryName }}</a>
+                    <a href="{{ "/categories/" | relLangURL }}{{ $subCategoryName | urlize }}" class="mx-2">{{ $subCategoryName }}</a>
                     <span class="text-muted small font-weight-light">
                       {{ len $subPages }}
                       {{ if gt (len $subPages) 1 }}
