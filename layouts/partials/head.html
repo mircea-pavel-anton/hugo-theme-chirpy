@@ -27,13 +27,14 @@
     {{ site.Title }}
   </title>
 
-  {{ partial "favicons.html" . }}
+  {{ partialCached "favicons.html" . }}
 
   <!-- Resource Hints -->
   {{ if not site.Params.assets.self_host }}
     {{ range site.Data.origin.cors.resource_hints }}
+      {{ $url := .url }}
       {{ range .links }}
-        <link rel="{{ .rel }}" href="{{ .url }}" {{ if isset . "opts" }}{{ delimit .opts " " | safeHTMLAttr }}{{ end }}>
+        <link rel="{{ .rel }}" href="{{ $url }}" {{ if isset . "opts" }}{{ delimit .opts " " | safeHTMLAttr }}{{ end }}>
       {{ end }}
     {{ end }}
   {{ end }}
