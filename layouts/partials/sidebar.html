@@ -24,7 +24,7 @@
         {{ range .Site.Menus.main }}
           <li class="nav-item{{ if eq .URL $.RelPermalink }} active{{ end }}">
             <a href="{{ .URL | relURL }}" class="nav-link">
-              <i class="{{ .Pre }}"></i>
+              <i class="fa-fw fas {{ .Pre }}"></i>
               <span>{{ (i18n (printf "tabs.%s" .Identifier) | default .Name) | upper }}</span>
             </a>
           </li>

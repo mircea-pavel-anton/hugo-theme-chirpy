@@ -40,31 +40,31 @@ path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
   name = "Home"
   url = "/"
   weight = 10
-  pre = "fa-solid fa-house"
+  pre = "fa-house"
 
 [[menu.main]]
   name = "Categories"
   url = "/categories/"
   weight = 20
-  pre = "fa-solid fa-stream"
+  pre = "fa-stream"
 
 [[menu.main]]
   name = "Tags"
   url = "/tags/"
   weight = 30
-  pre = "fa-solid fa-tags"
+  pre = "fa-tags"
 
 [[menu.main]]
   name = "Archives"
   url = "/archives/"
   weight = 40
-  pre = "fa-solid fa-archive"
+  pre = "fa-archive"
 
 [[menu.main]]
   name = "About"
   url = "/about/"
   weight = 50
-  pre = "fa-solid fa-info-circle"
+  pre = "fa-info-circle"
 
 [params]
   theme_version = "5.2.0"
