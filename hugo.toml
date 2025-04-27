@@ -5,7 +5,7 @@ defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 
 [languages]
-  [languages.zh]
+  [languages.zh-CN]
     languageName = "中文"
     languageCode = "zh-CN"
     weight = 1
@@ -78,31 +78,31 @@ path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
   weight = 50
   pre = "fa-info-circle"
 
-[[languages.zh.menu.main]]
+[[languages.zh-CN.menu.main]]
   name = "主页"
   url = "/"
   weight = 10
   pre = "fa-house"
 
-[[languages.zh.menu.main]]
+[[languages.zh-CN.menu.main]]
   name = "分类"
   url = "/categories/"
   weight = 20
   pre = "fa-stream"
 
-[[languages.zh.menu.main]]
+[[languages.zh-CN.menu.main]]
   name = "标签"
   url = "/tags/"
   weight = 30
   pre = "fa-tags"
 
-[[languages.zh.menu.main]]
+[[languages.zh-CN.menu.main]]
   name = "归档"
   url = "/archives/"
   weight = 40
   pre = "fa-archive"
 
-[[languages.zh.menu.main]]
+[[languages.zh-CN.menu.main]]
   name = "关于"
   url = "/about/"
   weight = 50
