@@ -1,4 +1,3 @@
-baseURL = 'https://example.org/'
 title = 'Chirpy'
 enableGitInfo = true
 
