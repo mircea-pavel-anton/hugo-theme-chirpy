@@ -3,7 +3,7 @@
 @use '../abstracts/mixins' as mx;
 @use '../abstracts/placeholders';
 
-p > code {
+code:not([class]):not([id]) {
   color: var(--highlighter-rouge-color);
   margin-top: 0.5rem;
   margin-bottom: 1.2em; /* Override BS Inline-code style */
@@ -57,19 +57,20 @@ p > code {
   }
 } /* .highlight */
 
+code:not([class]):not([id]) {
+  font-size: v.$code-font-size;
+  padding: 3px 5px;
+  word-break: break-word;
+  border-radius: v.$radius-sm;
+  background-color: var(--inline-code-bg);
+}
+
 code {
   -webkit-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
   color: var(--code-color);
 
-  p > & {
-    font-size: v.$code-font-size;
-    padding: 3px 5px;
-    word-break: break-word;
-    border-radius: v.$radius-sm;
-    background-color: var(--inline-code-bg);
-  }
 
   &.filepath {
     background-color: inherit;
