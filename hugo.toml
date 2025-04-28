@@ -48,65 +48,6 @@ defaultContentLanguageInSubdir = false
 [[module.imports]]
 path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
 
-[[languages.en.menu.main]]
-  name = "Home"
-  url = "/"
-  weight = 10
-  pre = "fa-house"
-
-[[languages.en.menu.main]]
-  name = "Categories"
-  url = "/categories/"
-  weight = 20
-  pre = "fa-stream"
-
-[[languages.en.menu.main]]
-  name = "Tags"
-  url = "/tags/"
-  weight = 30
-  pre = "fa-tags"
-
-[[languages.en.menu.main]]
-  name = "Archives"
-  url = "/archives/"
-  weight = 40
-  pre = "fa-archive"
-
-[[languages.en.menu.main]]
-  name = "About"
-  url = "/about/"
-  weight = 50
-  pre = "fa-info-circle"
-
-[[languages.zh-CN.menu.main]]
-  name = "主页"
-  url = "/"
-  weight = 10
-  pre = "fa-house"
-
-[[languages.zh-CN.menu.main]]
-  name = "分类"
-  url = "/categories/"
-  weight = 20
-  pre = "fa-stream"
-
-[[languages.zh-CN.menu.main]]
-  name = "标签"
-  url = "/tags/"
-  weight = 30
-  pre = "fa-tags"
-
-[[languages.zh-CN.menu.main]]
-  name = "归档"
-  url = "/archives/"
-  weight = 40
-  pre = "fa-archive"
-
-[[languages.zh-CN.menu.main]]
-  name = "关于"
-  url = "/about/"
-  weight = 50
-  pre = "fa-info-circle"
 
 [params]
   theme_version = "5.2.0"
