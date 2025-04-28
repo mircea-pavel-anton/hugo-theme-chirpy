@@ -77,8 +77,7 @@
                 <div class="me-auto">
                   <!-- posted date -->
                   <i class="far fa-calendar fa-fw me-1"></i>
-                  {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
-                  <time datetime="{{ .Date.Format "Jan 2, 2006" }}">{{ .Date.Format $dateFormat }}</time>
+                  {{ partial "datetime.html" (dict "date" .Date) }}
 
                   <!-- categories -->
                   {{ if .Params.categories }}
