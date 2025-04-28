@@ -50,7 +50,22 @@
   {{ $content = replaceRE `<div class="CHIRPY-HIGHLIGHT-MARKER highlight"([^>]*?)file="([^"]*)"([^>]*?)>` `<div class="highlight"$1file="$2"$3><div class="code-header"> <span data-label-text="$2"><i class="far fa-file-code fa-fw"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div>` $content }}
   
   <!-- Process remaining highlight divs that still have the marker (no file attribute) -->
-  {{ $content = replaceRE `<div class="CHIRPY-HIGHLIGHT-MARKER highlight"([^>]*?)>([\s\S]*?)<code class="language-([^"]*)"` `<div class="highlight"$1><div class="code-header"> <span data-label-text="$3"><i class="fas fa-code fa-fw small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div>$2<code class="language-$3"` $content }}
+  {{ $content = replaceRE `<div class="CHIRPY-HIGHLIGHT-MARKER highlight"([^>]*?)>([\s\S]*?)<code class="language-([^"]*)"` `<div class="highlight"$1><div class="code-header"> <span data-label-text-language="$3"><i class="fas fa-code fa-fw small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div>$2<code class="language-$3"` $content }}
+  
+  <!-- Process language aliases in data-label-text -->
+  {{ $pattern := `<span data-label-text-language="([^"]*)"` }}
+  
+  <!-- 查找所有语言标签，逐个处理 -->
+  {{ range findRE $pattern $content -1 }}
+    {{ $langRaw := replaceRE $pattern "$1" . }}
+    {{ $langNormalized := partial "language-alias.html" (dict "language" $langRaw) }}
+    
+    {{ if ne $langNormalized "" }}
+      {{ $replacement := printf `<span data-label-text="%s"` $langNormalized }}
+      {{ $original := printf `<span data-label-text-language="%s"` $langRaw }}
+      {{ $content = replace $content $original $replacement }}
+    {{ end }}
+  {{ end }}
 {{ end }}
 
 {{ $content | safeHTML }}
