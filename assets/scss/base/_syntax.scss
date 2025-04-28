@@ -46,7 +46,7 @@ code:not([class]):not([id]) {
     }
   }
 
-  .lineno {
+  tr td:first-child code {
     text-align: right;
     color: var(--highlight-lineno-color);
     -webkit-user-select: none;
@@ -54,6 +54,15 @@ code:not([class]):not([id]) {
     -o-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    background-color: unset !important;
+    border-radius: unset !important;
+    word-break: unset !important;
+    padding: unset !important;
+    font-size: unset !important;
+  }
+
+  .chroma {
+    padding-bottom: 6px;
   }
 } /* .highlight */
 
@@ -125,9 +134,6 @@ div[class^='highlight'] {
   box-shadow: var(--language-border-color) 0 0 0 1px;
 
   .content > & {
-    @include mx.ml-mr(-1rem);
-
-    border-radius: 0;
 
     @include bp.sm {
       @include mx.ml-mr(0);
