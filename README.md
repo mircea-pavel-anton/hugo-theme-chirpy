@@ -4,7 +4,7 @@
   <!-- markdownlint-disable-next-line -->
   # Chirpy Hugo Theme
 
-  A minimal, responsive, and feature-rich Jekyll theme for technical writing.
+  A hugo version of [Chirpy Jekyl Theme]([chirpy-jekyll]). A minimal, responsive, and feature-rich Hugo theme for technical writing.
 
   [**Live Demo** →][demo] | [**Jekyll Theme** →][chirpy-jekyll]
 
