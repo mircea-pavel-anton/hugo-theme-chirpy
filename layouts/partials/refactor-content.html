@@ -1,13 +1,5 @@
 {{ $content := .Content }}
 
-<!-- Handle tables -->
-{{ if findRE `<table` $content }}
-  {{ $content = replace $content `<table` `<div class="table-wrapper"><table` }}
-  {{ $content = replace $content `</table>` `</table></div>` }}
-  {{ $content = replace $content `<code><div class="table-wrapper">` `<code>` }}
-  {{ $content = replace $content `</table></div></code>` `</table></code>` }}
-{{ end }}
-
 <!-- Change checkbox icons -->
 {{ if findRE `<input.*type="checkbox"` $content }}
   <!-- first replace the li with task-list-item class -->
