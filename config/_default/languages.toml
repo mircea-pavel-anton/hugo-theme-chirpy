@@ -1,0 +1,9 @@
+[en]
+  languageName = "English"
+  languageCode = "en"
+  weight = 2
+
+[zh-CN]
+  languageName = "中文"
+  languageCode = "zh-CN"
+  weight = 1
