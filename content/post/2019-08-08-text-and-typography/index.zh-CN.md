@@ -127,12 +127,11 @@ fi;
 
 ### 特定文件名
 
-```sass
+```sass {file="_sass/jekyll-theme-chirpy.scss"}
 @import
   "colors/light-typography",
   "colors/dark-typography";
 ```
-{file="_sass/jekyll-theme-chirpy.scss"}
 
 ## 数学公式
 
@@ -155,29 +154,35 @@ $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
 
 ### 默认（带标题）
 
-![桌面视图](/posts/20190808/mockup.png){: width="972" height="589" }
+![桌面视图](mockup.png)
+{ width="972" height="589" }
 _全屏宽度和居中对齐_
 
 ### 左对齐
 
-![桌面视图](/posts/20190808/mockup.png){: width="972" height="589" .w-75 .normal}
+![桌面视图](mockup.png)
+{ width="972" height="589" .w-75 .normal}
 
 ### 向左浮动
 
-![桌面视图](/posts/20190808/mockup.png){: width="972" height="589" .w-50 .left}
+![桌面视图](mockup.png)
+{ width="972" height="589" .w-50 .left}
 这是一段文本示例，用于演示图片向左浮动时的效果。在这种情况下，文本会环绕在图片的右侧。这对于创建更具视觉吸引力的布局很有用，特别是当您想要文本和图片并排显示时。浮动元素是网页设计中常用的技术，可以有效利用空间并增强内容的可读性。
 
 ### 向右浮动
 
-![桌面视图](/posts/20190808/mockup.png){: width="972" height="589" .w-50 .right}
+![桌面视图](mockup.png)
+{ width="972" height="589" .w-50 .right}
 这是一段文本示例，用于演示图片向右浮动时的效果。在这种情况下，文本会环绕在图片的左侧。这种布局技术可以创建更加动态和有趣的页面设计。合理使用浮动可以使您的内容更加吸引人，并引导读者的视线在页面上流畅移动。记住，浮动元素需要适当的空间才能发挥最佳效果。
 
 ### 暗/亮模式 & 阴影
 
 下面的图片将根据主题偏好切换暗/亮模式，注意它有阴影效果。
 
-![仅亮模式](/posts/20190808/devtools-light.png){: .light .w-75 .shadow .rounded-10 w='1212' h='668' }
-![仅暗模式](/posts/20190808/devtools-dark.png){: .dark .w-75 .shadow .rounded-10 w='1212' h='668' }
+![仅亮模式](devtools-light.png)
+{ .light .w-75 .shadow .rounded-10 w="1212" h="668" }
+![仅暗模式](devtools-dark.png)
+{ .dark .w-75 .shadow .rounded-10 w="1212" h="668" }
 
 ## 视频
 

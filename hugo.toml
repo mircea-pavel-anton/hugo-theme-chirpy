@@ -23,6 +23,10 @@ defaultContentLanguageInSubdir = false
   noClasses = false
   tabWidth = 4
   wrapperClass = 'highlight'
+
+[markup.goldmark.parser]
+  wrapStandAloneImageWithinParagraph = false
+
 [markup.goldmark.parser.attribute]
   block = true
   title = true

@@ -121,8 +121,12 @@ $ bundle exec jekyll serve
 接下来，配置_Pages_服务：
 
 1. 在GitHub上进入您的仓库。选择_Settings_标签，然后点击左侧导航栏中的_Pages_。在**Source**部分（_Build and deployment_下），从下拉菜单中选择[**GitHub Actions**][pages-workflow-src]。
-   ![构建源](pages-source-light.png){: .light .border .normal w='375' h='140' }
-   ![构建源](pages-source-dark.png){: .dark .normal w='375' h='140' }
+   
+![构建源](pages-source-light.png)
+{ .light .border .normal width="375" height="140" }
+
+![构建源](pages-source-dark.png)
+{ .dark .normal width="375" height="140" }
 
 2. 将任何提交推送到GitHub以触发_Actions_工作流。在仓库的_Actions_标签中，您应该看到正在运行的_Build and Deploy_工作流。一旦构建完成并成功，站点将自动部署。
 

@@ -12,7 +12,7 @@ tags:
 pin: true
 ---
 
-[**Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/)的[网站图标](https://www.favicon-generator.org/about/)放置在`assets/img/favicons/`{: .filepath}目录中。您可能想用自己的图标替换它们。以下部分将指导您创建和替换默认网站图标。
+[**Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/)的[网站图标](https://www.favicon-generator.org/about/)放置在{{< markdown/filepath src="assets/img/favicons/" >}}目录中。您可能想用自己的图标替换它们。以下部分将指导您创建和替换默认网站图标。
 
 ## 生成网站图标
 
