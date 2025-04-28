@@ -86,17 +86,6 @@
                       {{ delimit .Params.categories ", " }}
                     </span>
                   {{ end }}
-
-                  <!-- tags -->
-                  {{ if .Params.tags }}
-                    <i class="fas fa-tags fa-fw me-1"></i>
-                    <span class="tags">
-                      {{ range $index, $tag := .Params.tags }}
-                        {{ if $index }}, {{ end }}
-                        <span class="categories">{{ $tag }}</span>
-                      {{ end }}
-                    </span>
-                  {{ end }}
                 </div>
 
                 {{ if .Params.pin }}
