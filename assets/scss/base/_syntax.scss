@@ -106,9 +106,20 @@ td.rouge-code {
   }
 }
 
-div[class^='language-'] {
+div[class^='highlight'] {
   @extend %rounded;
   @extend %code-snippet-bg;
+
+  tr {
+    background-color: var(--highlight-bg-color) !important;
+    border-bottom: none !important;
+  }
+
+  padding-bottom: 0;
+
+  .table-wrapper {
+    margin-bottom: .75rem;
+  }
 
   box-shadow: var(--language-border-color) 0 0 0 1px;
 
