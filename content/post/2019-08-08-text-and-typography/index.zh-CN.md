@@ -132,7 +132,7 @@ fi;
   "colors/light-typography",
   "colors/dark-typography";
 ```
-{: file='_sass/jekyll-theme-chirpy.scss'}
+{file="_sass/jekyll-theme-chirpy.scss"}
 
 ## 数学公式
 
@@ -150,16 +150,6 @@ $$
 当$a \ne 0$时，$ax^2 + bx + c = 0$有两个解，它们是
 
 $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
-
-## Mermaid SVG
-
-```mermaid
- gantt
-  title  为mermaid添加甘特图功能
-  apple :a, 2017-07-20, 1w
-  banana :crit, b, 2017-07-23, 1d
-  cherry :active, c, after b a, 1d
-```
 
 ## 图片
 

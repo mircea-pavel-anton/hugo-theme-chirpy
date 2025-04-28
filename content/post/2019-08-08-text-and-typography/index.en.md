@@ -127,12 +127,12 @@ fi;
 
 ### Specific filename
 
-```sass
+```sass {file="_sass/jekyll-theme-chirpy.scss"}
 @import
   "colors/light-typography",
   "colors/dark-typography";
 ```
-{: file='_sass/jekyll-theme-chirpy.scss'}
+
 
 ## Mathematics
 
@@ -150,16 +150,6 @@ We can reference the equation as \eqref{eq:series}.
 When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are
 
 $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
-
-## Mermaid SVG
-
-```mermaid
- gantt
-  title  Adding GANTT diagram functionality to mermaid
-  apple :a, 2017-07-20, 1w
-  banana :crit, b, 2017-07-23, 1d
-  cherry :active, c, after b a, 1d
-```
 
 ## Images
 
