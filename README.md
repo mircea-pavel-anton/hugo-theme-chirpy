@@ -4,13 +4,17 @@
   <!-- markdownlint-disable-next-line -->
   # Chirpy Hugo Theme
 
-  A hugo version of [Chirpy Jekyl Theme]([chirpy-jekyll]). A minimal, responsive, and feature-rich Hugo theme for technical writing.
+  A hugo version of [Chirpy Jekyll Theme]([chirpy-jekyll]). A minimal, responsive, and feature-rich Hugo theme for technical writing.
 
   [**Live Demo** →][demo] | [**Jekyll Theme** →][chirpy-jekyll]
 
   [![Devices Mockup](https://chirpy-img.netlify.app/commons/devices-mockup.png)][demo]
 
 </div>
+
+## Attention
+
+⚠️ This theme is still under active development. Some of its features will be available soon. **It will become stable in May, 2025.** (I've implemented 90% of its features till now).
 
 ## Features
 
