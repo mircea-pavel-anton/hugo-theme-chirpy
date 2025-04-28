@@ -23,7 +23,7 @@
       <ul class="nav">
         {{ range .Site.Menus.main }}
           {{ $active := false }}
-          {{ if eq ($.Site.GetPage .URL).RelPermalink $.RelPermalink }}
+          {{ if eq (.URL | relLangURL) $.RelPermalink }}
             {{ $active = true }}
           {{ end }}
           <li class="nav-item{{ if $active }} active{{ end }}">
