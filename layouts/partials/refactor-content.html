@@ -18,19 +18,4 @@
   {{ $content = replaceRE `<input.*?type="checkbox".*?>` `<i class="far fa-circle fa-fw"></i>` $content }}
 {{ end }}
 
-<!-- Create heading anchors -->
-{{ $headingLevels := slice "2" "3" "4" "5" }}
-{{ $headingContent := $content }}
-
-{{ range $level := $headingLevels }}
-  {{ $markStart := printf `<h%s id="` $level }}
-  {{ $markEnd := printf `</h%s>` $level }}
-  
-  {{ $pattern := printf `%s([^"]+)">(.*?)%s` $markStart $markEnd }}
-  {{ $replacement := printf `%s$1"><span class="me-2">$2</span><a href="#$1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a>%s` $markStart $markEnd }}
-  {{ $headingContent = replaceRE $pattern $replacement $headingContent }}
-{{ end }}
-
-{{ $content = $headingContent | safeHTML }}
-
 {{ $content | safeHTML }}
