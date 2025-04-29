@@ -9,7 +9,7 @@ code:not([class]):not([id]) {
   margin-bottom: 1.2em; /* Override BS Inline-code style */
 }
 
-.highlight {
+.code-block {
   @extend %rounded;
   @extend %code-snippet-bg;
 
@@ -116,7 +116,7 @@ td.rouge-code {
   }
 }
 
-div[class^='highlight'] {
+.code-block {
   @extend %rounded;
   @extend %code-snippet-bg;
 
