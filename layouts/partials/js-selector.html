@@ -4,6 +4,13 @@
 {{ if or (eq .RelPermalink "/") (eq .RelPermalink (relLangURL "/")) }}
   {{ $is_home = true }}
 {{ end }}
+{{ $is_categories := and (eq .Kind "taxonomy") (eq .Type "categories") }}
+{{ $is_category := and (eq .Kind "term") (eq .Type "categories") }}
+{{ $is_tags := and (eq .Kind "taxonomy") (eq .Type "tags") }}
+{{ $is_tag := and (eq .Kind "term") (eq .Type "tags") }}
+{{ $is_post := eq .Type "post"}}
+{{ $is_page := eq .Layout "page"}}
+{{ $is_archives := eq .Layout "archives"}}
 {{- $jsOpts := dict
   "target" "es2015"
   "minify" (eq hugo.Environment "production")
@@ -70,13 +77,13 @@
 {{ $js := "commons" }}
 {{ if $is_home }}
   {{ $js = "home" }}
-{{ else if eq .Layout "categories" }}
+{{ else if $is_categories }}
   {{ $js = "categories" }}
-{{ else if eq .Type "post" }}
+{{ else if $is_post }}
   {{ $js = "post" }}
-{{ else if eq .Layout "page" }}
+{{ else if $is_page }}
   {{ $js = "page" }}
-{{ else if or (eq .Layout "archives") (eq .Type "categories") (eq .Type "tags") }}
+{{ else if or $is_archives $is_category $is_tag }}
   {{ $js = "misc" }}
 {{ end }}
 
