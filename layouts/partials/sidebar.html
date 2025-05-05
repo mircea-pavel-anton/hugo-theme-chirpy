@@ -63,8 +63,7 @@
         {{ else if eq .type "twitter" }}
           {{ $url = printf "https://twitter.com/%s" .id }}
         {{ else if eq .type "email" }}
-          {{ $emailParts := split .id "@" }}
-          {{ $url = printf "javascript:location.href = 'mailto:' + ['%s','%s'].join('@')" (index $emailParts 0) (index $emailParts 1) }}
+          {{ $url = printf "mailto:%s" .id }}
         {{ else if eq .type "rss" }}
           {{ $url = "index.xml" | relLangURL }}
         {{ else }}
