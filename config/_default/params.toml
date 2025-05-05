@@ -1,7 +1,6 @@
 theme_version = "5.2.0"
 toc = true
 avatar = "img/commons/avatar.jpg"
-tagline = "A text-focused Jekyll theme"
 
 [assets]
   self_host = false
