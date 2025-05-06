@@ -158,12 +158,10 @@ main {
     }
   }
 
-  p {
-    > a.popup {
+  a.popup {
       &:not(.normal):not(.left):not(.right) {
         @include mx.align-center;
       }
-    }
   }
 
   .categories,
