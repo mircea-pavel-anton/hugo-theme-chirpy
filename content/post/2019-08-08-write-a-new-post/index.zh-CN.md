@@ -10,6 +10,8 @@ tags:
   - 写作
 pin: True
 ---
+> **NOTE:** 该教程还没有完成从 Jekyll 版本的迁移，请谨慎参考。
+{ .prompt-warning }
 
 本教程将指导您如何在 _Chirpy_ 模板中撰写文章，即使您以前使用过Jekyll，也值得阅读，因为许多功能需要设置特定变量。
 

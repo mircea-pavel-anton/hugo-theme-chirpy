@@ -13,6 +13,9 @@ tags:
 pin: true
 ---
 
+> **NOTE:** This tutorial is not fully migrated from the Jekyll version -- please reference with caution.
+{ .prompt-warning }
+
 ## Creating a Site Repository
 
 When creating your site repository, you have two options depending on your needs:
@@ -30,7 +33,7 @@ This approach simplifies upgrades, isolates unnecessary files, and is perfect fo
 This approach is convenient for modifying features or UI design, but presents challenges during upgrades. So don't try this unless you are familiar with Jekyll and plan to heavily modify this theme.
 
 1. Sign in to GitHub.
-2. [Fork the theme repository](https://github.com/cotes2020/jekyll-theme-chirpy/fork).
+2. [Fork the theme repository](https://github.com/geekifan/jekyll-theme-chirpy/fork).
 3. Name the new repository `<username>.github.io`, replacing `username` with your lowercase GitHub username.
 
 ## Setting up the Environment
@@ -58,10 +61,9 @@ For Unix-like systems, you can set up the environment natively for optimal perfo
 
 **Steps**:
 
-1. Follow the [Jekyll installation guide](https://jekyllrb.com/docs/installation/) to install Jekyll and ensure [Git](https://git-scm.com/) is installed.
+1. Follow the [Hugo installation guide](https://gohugo.io/installation/) to install Hugo and ensure [Git](https://git-scm.com/) is installed.
 2. Clone your repository to your local machine.
-3. If you forked the theme, install [Node.js][nodejs] and run `bash tools/init.sh` in the root directory to initialize the repository.
-4. Run command `bundle` in the root of your repository to install the dependencies.
+3. Run command `hugo mod get` to install the dependencies.
 
 ## Usage
 
@@ -70,26 +72,21 @@ For Unix-like systems, you can set up the environment natively for optimal perfo
 To run the site locally, use the following command:
 
 ```terminal
-$ bundle exec jekyll serve
+hugo serve
 ```
 
 > If you are using Dev Containers, you must run that command in the **VS Code** Terminal.
-{: .prompt-info }
+{ .prompt-info }
 
-After a few seconds, the local server will be available at <http://127.0.0.1:4000>.
+After a few seconds, the local server will be available at <http://127.0.0.1:1313>.
 
 ### Configuration
 
-Update the variables in {{< markdown/filepath src="_config.yml">}} as needed. Some typical options include:
-
-- `url`
-- `avatar`
-- `timezone`
-- `lang`
+Update the variables in {{< markdown/filepath src="hugo.html">}} as needed. Some typical options include:
 
 ### Social Contact Options
 
-Social contact options are displayed at the bottom of the sidebar. You can enable or disable specific contacts in the {{< markdown/filepath src="_data/contact.yml">}} file.
+Social contact options are displayed at the bottom of the sidebar. You can enable or disable specific contacts in the {{< markdown/filepath src="config/_default/params.toml">}} file.
 
 ### Customizing the Stylesheet
 
@@ -97,9 +94,9 @@ To customize the stylesheet, copy the theme's {{< markdown/filepath src="assets/
 
 ### Customizing Static Assets
 
-Static assets configuration was introduced in version `5.1.0`. The CDN of the static assets is defined in {{< markdown/filepath src="_data/origin/cors.ymll">}}. You can replace some of them based on the network conditions in the region where your website is published.
+The CDN of the static assets is defined in {{< markdown/filepath src="data/origin/cors.yaml">}}. You can replace some of them based on the network conditions in the region where your website is published.
 
-If you prefer to self-host the static assets, refer to the [_chirpy-static-assets_](https://github.com/cotes2020/chirpy-static-assets#readme) repository.
+If you prefer to self-host the static assets, modify {{< markdown/filepath src="config/_default/params.toml">}} and turn `self_host` on. The static files are from [geekifan/chirpy-static-assets](https://github.com/geekifan/chirpy-static-assets#readme) which is a fork of [cotes2020/chirpy-static-assets](https://github.com/cotes2020/chirpy-static-assets#readme) with minimal changes to make it work with hugo.
 
 ## Deployment
 
@@ -145,7 +142,7 @@ $ JEKYLL_ENV=production bundle exec jekyll b
 Unless you specified the output path, the generated site files will be placed in the {{< markdown/filepath src="_site" >}}folder of the project's root directory. Upload these files to your target server.
 
 [nodejs]: https://nodejs.org/
-[starter]: https://github.com/cotes2020/chirpy-starter
+[starter]: https://github.com/geekifan/chirpy-starter
 [pages-workflow-src]: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow
 [docker-desktop]: https://www.docker.com/products/docker-desktop/
 [docker-engine]: https://docs.docker.com/engine/install/

@@ -27,7 +27,7 @@ pin: true
 - {{< markdown/filepath src="browserconfig.xml" >}}
 - {{< markdown/filepath src="site.webmanifest" >}}
 
-然后将剩余的图像文件（{{< markdown/filepath src=".PNG" >}}和{{< markdown/filepath src=".ICO" >}}）复制到您的Jekyll站点的{{< markdown/filepath src="assets/img/favicons/" >}}目录中，覆盖原始文件。如果您的Jekyll站点还没有这个目录，只需创建一个。
+然后将剩余的图像文件（{{< markdown/filepath src=".PNG" >}}和{{< markdown/filepath src=".ICO" >}}）复制到您的Hugo站点的{{< markdown/filepath src="assets/img/favicons/" >}}目录中，覆盖原始文件。如果您的Hugo站点还没有这个目录，只需创建一个。
 
 下表将帮助您理解网站图标文件的变化：
 
