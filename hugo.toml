@@ -39,5 +39,12 @@ defaultContentLanguageInSubdir = false
 
 [module]
 [[module.imports]]
-path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
+  path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
+
+[[module.imports]]
+  path = "github.com/geekifan/chirpy-static-assets"
+
+[[module.imports.mounts]]
+  source = "."
+  target = "static/lib"
 

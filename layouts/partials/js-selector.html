@@ -1,4 +1,4 @@
-{{ $origin := cond (eq .Site.Params.self_host true) "basic" "cors" }}
+{{ $origin := cond (eq .Site.Params.assets.self_host true) "basic" "cors" }}
 {{ $data := index .Site.Data.origin $origin }}
 {{ $is_home := false }}
 {{ if or (eq .RelPermalink "/") (eq .RelPermalink (relLangURL "/")) }}

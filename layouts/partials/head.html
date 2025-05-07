@@ -1,4 +1,4 @@
-{{ $origin := cond (eq .Site.Params.self_host true) "basic" "cors" }}
+{{ $origin := cond (eq .Site.Params.assets.self_host true) "basic" "cors" }}
 {{ $data := index .Site.Data.origin $origin }}
 {{- $jsOpts := dict
   "target" "es2015"
