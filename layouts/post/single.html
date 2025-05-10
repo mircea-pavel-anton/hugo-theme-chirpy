@@ -46,14 +46,19 @@
         <div class="d-flex justify-content-between">
           <!-- author(s) -->
           <span>
-            {{ $authors := .Params.author | default .Params.authors }}
+            {{ $authors := .Params.author | default .Params.authors | default .Site.Params.author | default .Site.Params.authors }}
+            {{ if not (reflect.IsSlice $authors) }}
+              {{ $authors = slice $authors }}
+            {{ end }}
+            {{ $authorsData := index $.Site.Data.authors .Site.LanguageCode | default $.Site.Data.authors }}
+
 
             {{ i18n "post.written_by" }}
 
             <em>
               {{ if $authors }}
                 {{ range $i, $author := $authors }}
-                  {{ with $.Site.Data.authors }}
+                  {{ with $authorsData }}
                     {{ with (index . $author) }}
                       {{ if .url }}
                         <a href="{{ .url }}">{{ .name }}</a>
