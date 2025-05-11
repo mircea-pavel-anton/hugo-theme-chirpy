@@ -18,10 +18,6 @@
 
 {{ $urls := slice }}
 
-
-{{ $urls = $urls | append $data.search.js }}
-
-
 <!-- layout specified -->
 {{ if or (eq .Type "post") (eq .Layout "page") $is_home }}
   {{ with $data.lazyPolyfill.js }}
