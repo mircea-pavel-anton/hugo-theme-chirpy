@@ -1,7 +1,7 @@
 {{ $origin := cond (eq .Site.Params.assets.self_host true) "basic" "cors" }}
 {{ $data := index .Site.Data.origin $origin }}
 {{ $is_home := false }}
-{{ if or (eq .RelPermalink "/") (eq .RelPermalink (relLangURL "/")) }}
+{{ if or (eq .RelPermalink "/") (eq .RelPermalink (relLangURL "/")) (eq .RelPermalink (.Site.Home.RelPermalink)) }}
   {{ $is_home = true }}
 {{ end }}
 {{ $is_categories := and (eq .Kind "taxonomy") (eq .Type "categories") }}

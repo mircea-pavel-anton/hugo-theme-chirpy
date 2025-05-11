@@ -14,7 +14,7 @@
   
       {{ range $sorted_tags }}
         <div>
-          <a class="tag" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">
+          <a class="tag" href="{{ "tags/" | absLangURL }}{{ . | urlize }}/">
             {{ . -}}
             <span class="text-muted">{{ len (index $.Site.Taxonomies.tags .) }}</span>
           </a>

@@ -5,27 +5,27 @@
       {{ $page := . }}
       {{ $url := .RelPermalink }}
       {{ $paths := split (trim $url "/") "/" }}
-      {{ $is_home := or (eq $url "/") (eq $url (relLangURL "/")) }}
+      {{ $is_home := or (eq $url "/") (eq $url (relLangURL "/")) (eq .RelPermalink (.Site.Home.RelPermalink)) }}
 
       {{ if $is_home }}
         <!-- index page -->
         <span>{{ T "tabs.home" | title }}</span>
       {{else}}
         <span>
-          <a href="{{ "/" | relLangURL }}">
+          <a href="{{ .Site.Home.RelPermalink }}">
             {{- T "tabs.home" | title -}}
           </a>
         </span>
         {{ if eq $page.Type "tags" }}
           {{ if .Data.Term}}
-            <span><a href="{{ "/tags/" | relLangURL }}">{{i18n "tabs.tags"}}</a></span>
+            <span><a href="{{ "tags/" | absLangURL }}">{{i18n "tabs.tags"}}</a></span>
             <span>{{ .Data.Term }}</span>
           {{ else }}
             <span>{{i18n "tabs.tags"}}</span>
           {{ end }}
         {{ else if eq $page.Type "categories" }}
           {{ if .Data.Term}}
-            <span><a href="{{ "/categories/" | relLangURL }}">{{i18n "tabs.categories"}}</a></span>
+            <span><a href="{{ "categories/" | absLangURL }}">{{i18n "tabs.categories"}}</a></span>
             <span>{{ .Data.Term }}</span>
           {{ else }}
             <span>{{i18n "tabs.categories"}}</span>
