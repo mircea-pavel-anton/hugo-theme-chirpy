@@ -82,25 +82,30 @@ After a few seconds, the local server will be available at <http://127.0.0.1:131
 
 ### Configuration
 
-Update the variables in {{< markdown/filepath src="hugo.html">}} as needed. Some typical options include:
+Update the variables in {{< filepath src="_config.yml">}} as needed. Some typical options include:
+
+- `url`
+- `avatar`
+- `timezone`
+- `lang`
 
 ### Social Contact Options
 
-Social contact options are displayed at the bottom of the sidebar. You can enable or disable specific contacts in the {{< markdown/filepath src="config/_default/params.toml">}} file.
+Social contact options are displayed at the bottom of the sidebar. You can enable or disable specific contacts in the {{< filepath src="_data/contact.yml">}} file.
 
 ### Customizing the Stylesheet
 
-To customize the stylesheet, copy the theme's {{< markdown/filepath src="assets/css/jekyll-theme-chirpy.scss">}} file to the same path in your Jekyll site, and add your custom styles at the end of the file.
+To customize the stylesheet, copy the theme's {{< filepath src="assets/css/jekyll-theme-chirpy.scss">}} file to the same path in your Jekyll site, and add your custom styles at the end of the file.
 
 ### Customizing Static Assets
 
-The CDN of the static assets is defined in {{< markdown/filepath src="data/origin/cors.yaml">}}. You can replace some of them based on the network conditions in the region where your website is published.
+Static assets configuration was introduced in version `5.1.0`. The CDN of the static assets is defined in {{< filepath src="_data/origin/cors.ymll">}}. You can replace some of them based on the network conditions in the region where your website is published.
 
-If you prefer to self-host the static assets, modify {{< markdown/filepath src="config/_default/params.toml">}} and turn `self_host` on. The static files are from [geekifan/chirpy-static-assets](https://github.com/geekifan/chirpy-static-assets#readme) which is a fork of [cotes2020/chirpy-static-assets](https://github.com/cotes2020/chirpy-static-assets#readme) with minimal changes to make it work with hugo.
+If you prefer to self-host the static assets, modify {{< filepath src="config/_default/params.toml">}} and turn `self_host` on. The static files are from [geekifan/chirpy-static-assets](https://github.com/geekifan/chirpy-static-assets#readme) which is a fork of [cotes2020/chirpy-static-assets](https://github.com/cotes2020/chirpy-static-assets#readme) with minimal changes to make it work with hugo.
 
 ## Deployment
 
-Before deploying, check the {{< markdown/filepath src="_config.yml">}} file and ensure the `url` is configured correctly. If you prefer a [**project site**](https://help.github.com/en/github/working-with-github-pages/about-github-pages#types-of-github-pages-sites) and don't use a custom domain, or if you want to visit your website with a base URL on a web server other than **GitHub Pages**, remember to set the `baseurl` to your project name, starting with a slash, e.g., `/project-name`.
+Before deploying, check the {{< filepath src="_config.yml">}} file and ensure the `url` is configured correctly. If you prefer a [**project site**](https://help.github.com/en/github/working-with-github-pages/about-github-pages#types-of-github-pages-sites) and don't use a custom domain, or if you want to visit your website with a base URL on a web server other than **GitHub Pages**, remember to set the `baseurl` to your project name, starting with a slash, e.g., `/project-name`.
 
 Now you can choose _ONE_ of the following methods to deploy your Jekyll site.
 
@@ -109,7 +114,7 @@ Now you can choose _ONE_ of the following methods to deploy your Jekyll site.
 Prepare the following:
 
 - If you're on the GitHub Free plan, keep your site repository public.
-- If you have committed {{< markdown/filepath src="Gemfile.lockl">}} to the repository, and your local machine is not running Linux, update the platform list of the lock file:
+- If you have committed {{< filepath src="Gemfile.lockl">}} to the repository, and your local machine is not running Linux, update the platform list of the lock file:
 
   ```console
   $ bundle lock --add-platform x86_64-linux
@@ -139,7 +144,7 @@ Navigate to the root of the source project, and build your site with the followi
 $ JEKYLL_ENV=production bundle exec jekyll b
 ```
 
-Unless you specified the output path, the generated site files will be placed in the {{< markdown/filepath src="_site" >}}folder of the project's root directory. Upload these files to your target server.
+Unless you specified the output path, the generated site files will be placed in the {{< filepath src="_site" >}}folder of the project's root directory. Upload these files to your target server.
 
 [nodejs]: https://nodejs.org/
 [starter]: https://github.com/geekifan/chirpy-starter
