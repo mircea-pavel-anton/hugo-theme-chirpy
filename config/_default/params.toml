@@ -1,6 +1,7 @@
 theme_version = "5.2.0"
 toc = true
 avatar = "img/commons/avatar.jpg"
+author = "yifan"
 
 [assets]
   self_host = false
