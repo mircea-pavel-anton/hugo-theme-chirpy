@@ -172,16 +172,6 @@ main {
     }
   }
 
-  @include bp.lte(bp.get(sm)) {
-    .content {
-      > blockquote[class^='prompt-'] {
-        @include mx.ml-mr(-1rem);
-
-        border-radius: 0;
-        max-width: none;
-      }
-    }
-  }
 }
 
 .footnotes > ol {
