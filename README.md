@@ -12,10 +12,6 @@
 
 </div>
 
-## Attention
-
-⚠️ This theme is still under active development. Some of its features will be available soon. **It will become stable in May, 2025.** (I've implemented 90% of its features till now).
-
 ## Features
 
 - Native i18n Support (thanks to [Hugo][hugo])
@@ -26,7 +22,7 @@
 - Trending Tags
 - Table of Contents
 - Last Modified Date
-- Syntax Highlighting (🚧 Work in Progress)
+- Syntax Highlighting
 - Mathematical Expressions
 - Mermaid Diagrams & Flowcharts (🚧 Work in Progress)
 - Dark Mode Images
@@ -38,6 +34,9 @@
 - Web Analytics
 - SEO & Performance Optimization
 
+## Quick Start
+Use this template: [geekifan/chirpy-starter](https://github.com/geekifan/chirpy-starter)
+
 ## Documentation
 
 To learn how to use, develop, and upgrade the project, please refer to the [Wiki][wiki].
@@ -46,7 +45,6 @@ To learn how to use, develop, and upgrade the project, please refer to the [Wiki
 
 Contributions (_pull requests_, _issues_, and _discussions_) are what make the open-source community such an amazing place
 to learn, inspire, and create. Any contributions you make are greatly appreciated.
-For details, see the "[Contributing Guidelines][contribute-guide]".
 
 ## Credits
 
@@ -59,6 +57,5 @@ This project is published under [MIT License][license].
 [chirpy-jekyll]: https://github.com/cotes2020/jekyll-theme-chirpy
 [license]: https://github.com/geekifan/hugo-theme-chirpy/blob/main/LICENSE
 [hugo]: https://gohugo.io/
-[demo]: https://github.com/geekifan/
-[wiki]: https://github.com/geekifan/
-[contribute-guide]: https://github.com/geekifan/
+[demo]: https://geekifan.github.io/chirpy-starter
+[wiki]: https://geekifan.github.io/chirpy-starter
