@@ -7,6 +7,9 @@ defaultContentLanguageInSubdir = false
 [pagination]
   pagerSize = 5
 
+[params]
+  theme_version = "1.0.0"
+
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
