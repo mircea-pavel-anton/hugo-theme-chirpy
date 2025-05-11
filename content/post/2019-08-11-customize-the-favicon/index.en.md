@@ -9,10 +9,9 @@ categories:
   - Tutorial
 tags:
   - favicon
-pin: true
 ---
 
-The [favicons](https://www.favicon-generator.org/about/) of [**Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/) are placed in the directory {{< markdown/filepath src="assets/img/favicons/" >}}. You may want to replace them with your own. The following sections will guide you to create and replace the default favicons.
+The [favicons](https://www.favicon-generator.org/about/) of [**Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/) are placed in the directory {{< filepath src="assets/img/favicons/" >}}. You may want to replace them with your own. The following sections will guide you to create and replace the default favicons.
 
 ## Generate the favicon
 
@@ -24,10 +23,10 @@ In the next step, the webpage will show all usage scenarios. You can keep the de
 
 Download the generated package, unzip and delete the following two from the extracted files:
 
-- {{< markdown/filepath src="browserconfig.xml" >}}
-- {{< markdown/filepath src="site.webmanifest" >}}
+- {{< filepath src="browserconfig.xml" >}}
+- {{< filepath src="site.webmanifest" >}}
 
-And then copy the remaining image files ({{< markdown/filepath src=".PNG" >}} and {{< markdown/filepath src=".ICO" >}}) to cover the original files in the directory {{< markdown/filepath src="assets/img/favicons/" >}} of your Hugo site. If your Hugo site doesn't have this directory yet, just create one.
+And then copy the remaining image files ({{< filepath src=".PNG" >}} and {{< filepath src=".ICO" >}}) to cover the original files in the directory {{< filepath src="assets/img/favicons/" >}} of your Hugo site. If your Hugo site doesn't have this directory yet, just create one.
 
 The following table will help you understand the changes to the favicon files:
 
@@ -38,6 +37,6 @@ The following table will help you understand the changes to the favicon files:
 
 <!-- markdownlint-disable-next-line -->
 >  ✓ means keep, ✗ means delete.
-{.prompt-info }
+{ .prompt-info }
 
 The next time you build the site, the favicon will be replaced with a customized edition.

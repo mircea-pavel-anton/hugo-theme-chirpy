@@ -106,7 +106,7 @@ This is an example of `Inline Code`.
 
 ## Filepath
 
-Here is the {{< markdown/filepath src="/path/to/the/file.extend" >}}.
+Here is the {{< filepath src="/path/to/the/file.extend" >}}.
 
 ## Code blocks
 
@@ -156,8 +156,7 @@ $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
 ### Default (with caption)
 
 ![Desktop View](mockup.png)
-{ width="972" height="589" }
-_Full screen width and center alignment_
+{ width="972" height="589" caption="Full screen width and center alignment"}
 
 ### Left aligned
 

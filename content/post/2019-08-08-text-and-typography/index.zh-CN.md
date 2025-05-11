@@ -14,7 +14,7 @@ math: true
 image:
   path: devices-mockup.png
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
-  alt: Chirpy主题在多个设备上的响应式渲染。
+  alt: Chirpy 主题在多个设备上的响应式渲染。
 ---
 
 ## 标题
@@ -32,7 +32,7 @@ image:
 
 ## 段落
 
-这是一个段落示例。在这里，我们可以看到段落是如何在Markdown中呈现的。段落是由一个或多个连续的文本行组成，它们之间用一个或多个空行分隔。正常的段落不应该用空格或制表符缩进。这样可以保持文档的整洁和一致性。文本排版是网页设计和内容创作中的重要元素，良好的排版可以提高可读性和美观度。
+这是一个段落示例。在这里，我们可以看到段落是如何在 Markdown 中呈现的。段落是由一个或多个连续的文本行组成，它们之间用一个或多个空行分隔。正常的段落不应该用空格或制表符缩进。这样可以保持文档的整洁和一致性。文本排版是网页设计和内容创作中的重要元素，良好的排版可以提高可读性和美观度。
 
 ## 列表
 
@@ -65,22 +65,22 @@ image:
 
 ## 引用块
 
-> 这行显示*引用块*。
+> 这行显示 *引用块*。
 
 ## 提示框
 
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable -->
-> 这是一个显示`tip`类型提示的例子。
+> 这是一个显示 `tip` 类型提示的例子。
 {.prompt-tip }
 
-> 这是一个显示`info`类型提示的例子。
+> 这是一个显示 `info` 类型提示的例子。
 {.prompt-info }
 
-> 这是一个显示`warning`类型提示的例子。
+> 这是一个显示 `warning` 类型提示的例子。
 {.prompt-warning }
 
-> 这是一个显示`danger`类型提示的例子。
+> 这是一个显示 `danger` 类型提示的例子。
 {.prompt-danger }
 <!-- markdownlint-restore -->
 
@@ -98,15 +98,15 @@ image:
 
 ## 脚注
 
-点击钩子将定位到脚注[^footnote]，这里是另一个脚注[^fn-nth-2]。
+点击钩子将定位到脚注 [^footnote]，这里是另一个脚注 [^fn-nth-2]。
 
 ## 内联代码
 
-这是`内联代码`的一个例子。
+这是 `内联代码` 的一个例子。
 
 ## 文件路径
 
-这里是 {{< markdown/filepath src="/path/to/the/file.extend" >}}。
+这里是 {{< filepath src="/path/to/the/file.extend" >}}。
 
 ## 代码块
 
@@ -135,7 +135,7 @@ fi;
 
 ## 数学公式
 
-数学公式由[**MathJax**](https://www.mathjax.org/)提供支持：
+数学公式由 [**MathJax**](https://www.mathjax.org/) 提供支持：
 
 $$
 \begin{equation}
@@ -144,9 +144,9 @@ $$
 \end{equation}
 $$
 
-我们可以引用公式如\eqref{eq:series}。
+我们可以引用公式如 \eqref{eq:series}。
 
-当$a \ne 0$时，$ax^2 + bx + c = 0$有两个解，它们是
+当 $a \ne 0$ 时，$ax^2 + bx + c = 0$ 有两个解，它们是
 
 $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
 
@@ -155,8 +155,7 @@ $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
 ### 默认（带标题）
 
 ![桌面视图](mockup.png)
-{ width="972" height="589" }
-_全屏宽度和居中对齐_
+{ width="972" height="589" caption="全屏宽度和居中对齐" }
 
 ### 左对齐
 
