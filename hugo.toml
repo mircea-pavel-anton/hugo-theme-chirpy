@@ -10,29 +10,6 @@ defaultContentLanguageInSubdir = false
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
-[markup.highlight]
-  anchorLineNos = false
-  codeFences = true
-  guessSyntax = true
-  hl_Lines = ''
-  hl_inline = false
-  lineAnchors = ''
-  lineNoStart = 1
-  lineNos = true
-  lineNumbersInTable = true
-  noClasses = false
-  tabWidth = 4
-  wrapperClass = 'highlight'
-
-[markup.goldmark.parser]
-  wrapStandAloneImageWithinParagraph = false
-
-[markup.goldmark.parser.attribute]
-  block = true
-  title = true
-[markup.goldmark.renderer]
-  unsafe = true
-
 [taxonomies]
   category = "categories"
   tag = "tags"
