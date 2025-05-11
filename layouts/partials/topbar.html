@@ -59,7 +59,7 @@
     <div id="topbar-title">
       {{ if eq .Layout "home" }}
         {{- .Site.Title -}}
-      {{ else if or (eq .Type "tabs") (eq .Kind "page") }}
+      {{ else if or (eq .Type "tabs") (eq .Kind "page") (eq .Kind "404") }}
         {{- T (printf "tabs.%s" (path.Base $url)) | default .Title -}}
       {{ else }}
         {{- T (printf "layout.%s" .Layout) | default (.Layout | title) -}}
