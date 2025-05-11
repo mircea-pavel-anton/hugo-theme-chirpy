@@ -24,8 +24,8 @@
     <h2 class="panel-heading">{{ T "panel.trending_tags" }}</h2>
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       {{ range $trendingTags }}
-        {{ $url := printf "/tags/%s/" (urlize .) }}
-        <a class="post-tag btn btn-outline-primary" href="{{ $url | relURL }}">{{ . }}</a>
+        {{ $tag_path := printf "tags/%s/" (urlize .) }}
+        <a class="post-tag btn btn-outline-primary" href="{{ $tag_path | absLangURL }}">{{ . }}</a>
       {{ end }}
     </div>
   </section>
