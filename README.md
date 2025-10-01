@@ -11,11 +11,11 @@ This is my personal fork which I am using for my website. It fixes a couple of t
 
 Thanks to the theme [Chirpy Jekyll Theme][chirpy-jekyll] and all its contributors. Additionally, thanks to [geekifan](https://github.com/geekifan) for the work of porting this to Hugo.
 
+- chirpy-jekyll: https://github.com/cotes2020/jekyll-theme-chirpy
+- license: https://github.com/geekifan/hugo-theme-chirpy/blob/main/LICENSE
+- hugo: https://gohugo.io/
+- original hugo fork: https://geekifan.github.io/hugo-theme-chirpy
+
 ## License
 
 This project is published under [MIT License][license].
-
-[chirpy-jekyll]: https://github.com/cotes2020/jekyll-theme-chirpy
-[license]: https://github.com/geekifan/hugo-theme-chirpy/blob/main/LICENSE
-[hugo]: https://gohugo.io/
-[original hugo fork]: https://geekifan.github.io/hugo-theme-chirpy
